@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TemplateFullwidthComponent implements OnInit {
   @Input() title: string;
   @Input() subtitle: string;
+  @Input() color2: boolean;
   constructor() { }
 
   ngOnInit(): void {

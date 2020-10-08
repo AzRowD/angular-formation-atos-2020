@@ -4,7 +4,7 @@
       "tjmHt": 1200,
       "nbJours": 1,
       "tva": 20,
-      "state": "OPTION",
+      "state": "CONFIRMED",
       "typePresta": "formation",
       "client": "M2i",
       "comment": "merci m2i",
@@ -14,19 +14,50 @@
       "tjmHt": 1200,
       "nbJours": 6,
       "tva": 20,
-      "state": "CONFIRMED",
+      "state": "OPTION",
       "typePresta": "formation",
       "client": "Modis",
       "comment": "merci modis",
       "id": 2
+    },
+    {
+      "tjmHt": 1100,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "OPTION",
+      "typePresta": "forma",
+      "client": "Atos",
+      "comment": "merci",
+      "id": 3
+    },
+    {
+      "tjmHt": 1100,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "OPTION",
+      "typePresta": "coaching",
+      "client": "ssss",
+      "comment": "ddd",
+      "id": 4
+    },
+    {
+      "tjmHt": 1100,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "OPTION",
+      "typePresta": "ddddd",
+      "client": "d",
+      "comment": "dddd",
+      "id": 5
     }
   ],
   "clients": [
     {
-      "state": "ACTIVE",
+      "state": "INACTIVE",
       "id": 1,
       "name": "Christophe2",
       "totalCaHt": 12000,
+      "tva": 20,
       "comment": "un comment pour client christophe2"
     },
     {
@@ -34,7 +65,16 @@
       "id": 2,
       "name": "Modis",
       "totalCaHt": 120000,
+      "tva": 20,
       "comment": "un comment pour client modis"
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "totalCaHt": 0,
+      "tva": 20,
+      "comment": "test",
+      "state": "ACTIVE"
     }
   ]
 }

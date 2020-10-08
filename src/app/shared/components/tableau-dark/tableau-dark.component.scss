@@ -1,0 +1,24 @@
+.table-dark {
+  .state-inactive {
+    background: var(--app-error);
+  }
+
+  .state-active {
+    background: var(--app-success);
+  }
+  .state-canceled {
+    background: var(--app-error);
+  }
+
+  .state-option {
+    background: var(--app-warning);
+  }
+
+  .state-confirmed {
+    background: var(--app-success);
+  }
+}
+
+.color2 .state-option {
+  background: var(--app-secondary);
+}

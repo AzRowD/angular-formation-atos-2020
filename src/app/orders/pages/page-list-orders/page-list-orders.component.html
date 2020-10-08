@@ -1,8 +1,5 @@
-<app-template-fullwidth title="Orders">
-  <!-- <ng-container *ngIf="collection$ | async as collection">
-    <div>{{ collection | json }}</div>
-  </ng-container> -->
-  <app-tableau-light *ngIf="collection$ | async as collection" [headers]="headers">
+<app-template-fullwidth *ngIf="title" [title]= "title" [color2]="true">
+  <app-tableau-dark *ngIf="collection$ | async as collection" [headers]="headers">
     <tr *ngFor="let item of collection">
       <td>{{ item.typePresta }}</td>
       <td>{{ item.client }}</td>
@@ -10,8 +7,9 @@
       <td>{{ item.tjmHt | currency }}</td>
       <td>{{ item.tjmHt | total: item.nbJours | currency }}</td>
       <td>{{ item.tjmHt | total: item.nbJours : item.tva | currency }}</td>
-      <td>
-        <select>
+
+      <td [appState]="item.state">
+        <select (change)="changeState(item, $event)">
           <option *ngFor="let state of states" [value]="state" [selected]="state === item.state">{{ state }}</option>
           <!-- <option value="CANCELED" selected="false">CANCELED</option>
           <option value="OPTION" selected="true">OPTION</option>
@@ -19,8 +17,11 @@
         </select>
       </td>
     </tr>
-  </app-tableau-light>
+  </app-tableau-dark>
   <app-button #test label="Add an order" route="add"></app-button>
   <app-button label="Go to Google" href="http://www.google.fr"></app-button>
   <app-button label="Action" [action]="true" (clicked)="popup()"></app-button>
+
+  <app-subnav [links]= "myLinks"></app-subnav>
+  <router-outlet></router-outlet>
 </app-template-fullwidth>

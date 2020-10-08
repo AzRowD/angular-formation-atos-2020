@@ -11,3 +11,7 @@ a, button {
     text-decoration: none;
   }
 }
+
+:host-context(.color2) a, :host-context(.color2) button {
+  background: var(--app-secondary);
+}

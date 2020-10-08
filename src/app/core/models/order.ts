@@ -4,7 +4,7 @@ import { OrderI } from '../interfaces/order-i';
 export class Order implements OrderI{
   tjmHt = 1100;
   nbJours = 1;
-  tva: 20;
+  tva = 20;
   state = StateOrder.OPTION;
   typePresta: string;
   client: string;

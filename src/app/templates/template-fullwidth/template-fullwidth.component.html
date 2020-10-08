@@ -1,10 +1,13 @@
-<div class = "bandeau">
-  <app-text-bandeau>
-    <h1>{{ title }}</h1>
-    <h2 *ngIf="subtitle">{{ subtitle }}</h2>
-  </app-text-bandeau>
+<div [ngClass]="{'color2': color2}">
+  <div class = "bandeau">
+    <app-text-bandeau>
+      <h1>{{ title }}</h1>
+      <h2 *ngIf="subtitle">{{ subtitle }}</h2>
+    </app-text-bandeau>
+  </div>
+
+  <div class="container-fluid">
+    <ng-content></ng-content>
+  </div>
 </div>
 
-<div class="container-fluid">
-  <ng-content></ng-content>
-</div>
