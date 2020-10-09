@@ -80,6 +80,10 @@
         <tbody>
 
 
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
 
 
 
@@ -170,7 +174,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/components/tableau-light/tableau-light.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/components/tableau-light/tableau-light.component.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -196,7 +200,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/components/tableau-light/tableau-light.component.ts:9</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/components/tableau-light/tableau-light.component.ts:10</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -232,8 +236,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/shared/components/tableau-light/tableau-light.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/app/shared/components/tableau-light/tableau-light.component.ts:13</a></div>
                 </td>
             </tr>
 
@@ -255,12 +259,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, ViewEncapsulation } from &#x27;@angular/core&#x27;;
 import { Order } from &#x27;src/app/core/models/order&#x27;;
 @Component({
   selector: &#x27;app-tableau-light&#x27;,
   templateUrl: &#x27;./tableau-light.component.html&#x27;,
-  styleUrls: [&#x27;./tableau-light.component.scss&#x27;]
+  styleUrls: [&#x27;./tableau-light.component.scss&#x27;],
+  encapsulation: ViewEncapsulation.None
 })
 export class TableauLightComponent implements OnInit {
   @Input() headers: string[];
@@ -273,7 +278,7 @@ export class TableauLightComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;table class&#x3D;&quot;table&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;table class&#x3D;&quot;table tableau-light&quot;&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th scope&#x3D;&quot;col&quot; *ngFor&#x3D;&quot;let item of headers&quot;&gt;{{ item }}&lt;/th&gt;
@@ -290,7 +295,31 @@ export class TableauLightComponent implements OnInit {
                 <p class="comment">
                     <code>./tableau-light.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.tableau-light{
+  .state-inactive {
+    background: var(--app-error);
+  }
+
+  .state-active {
+    background: var(--app-success);
+  }
+  .state-canceled {
+    background: var(--app-error);
+  }
+
+  .state-option {
+    background: var(--app-warning);
+  }
+
+  .state-confirmed {
+    background: var(--app-success);
+  }
+}
+
+.color2 .state-option {
+  background: var(--app-secondary);
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -318,9 +347,9 @@ export class TableauLightComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><table class="table">  <thead>    <tr>      <th scope="col" *ngFor="let item of headers">{{ item }}</th>    </tr>  </thead>  <tbody>    <ng-content></ng-content>  </tbody></table></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IconCloseComponent', 'selector': 'app-icon-close'},{'name': 'IconDeleteComponent', 'selector': 'app-icon-delete'},{'name': 'IconEditComponent', 'selector': 'app-icon-edit'},{'name': 'IconNavComponent', 'selector': 'app-icon-nav'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddOrderComponent', 'selector': 'app-page-add-order'},{'name': 'PageEditClientComponent', 'selector': 'app-page-edit-client'},{'name': 'PageEditOrderComponent', 'selector': 'app-page-edit-order'},{'name': 'PageListClientsComponent', 'selector': 'app-page-list-clients'},{'name': 'PageListOrdersComponent', 'selector': 'app-page-list-orders'},{'name': 'PageLoginComponent', 'selector': 'app-page-login'},{'name': 'TableauLightComponent', 'selector': 'app-tableau-light'},{'name': 'TemplateContainerComponent', 'selector': 'app-template-container'},{'name': 'TemplateFullwidthComponent', 'selector': 'app-template-fullwidth'},{'name': 'TextBandeauComponent', 'selector': 'app-text-bandeau'},{'name': 'TextPagesComponent', 'selector': 'app-text-pages'},{'name': 'UiComponent', 'selector': 'app-ui'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><table class="table tableau-light">  <thead>    <tr>      <th scope="col" *ngFor="let item of headers">{{ item }}</th>    </tr>  </thead>  <tbody>    <ng-content></ng-content>  </tbody></table></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CommentOrderComponent', 'selector': 'app-comment-order'},{'name': 'DetailOrderComponent', 'selector': 'app-detail-order'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormClientComponent', 'selector': 'app-form-client'},{'name': 'FormOrderComponent', 'selector': 'app-form-order'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IconCloseComponent', 'selector': 'app-icon-close'},{'name': 'IconDeleteComponent', 'selector': 'app-icon-delete'},{'name': 'IconEditComponent', 'selector': 'app-icon-edit'},{'name': 'IconNavComponent', 'selector': 'app-icon-nav'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddOrderComponent', 'selector': 'app-page-add-order'},{'name': 'PageEditClientComponent', 'selector': 'app-page-edit-client'},{'name': 'PageEditOrderComponent', 'selector': 'app-page-edit-order'},{'name': 'PageListClientsComponent', 'selector': 'app-page-list-clients'},{'name': 'PageListOrdersComponent', 'selector': 'app-page-list-orders'},{'name': 'PageLoginComponent', 'selector': 'app-page-login'},{'name': 'SubnavComponent', 'selector': 'app-subnav'},{'name': 'TableauDarkComponent', 'selector': 'app-tableau-dark'},{'name': 'TableauLightComponent', 'selector': 'app-tableau-light'},{'name': 'TemplateContainerComponent', 'selector': 'app-template-container'},{'name': 'TemplateFullwidthComponent', 'selector': 'app-template-fullwidth'},{'name': 'TextBandeauComponent', 'selector': 'app-text-bandeau'},{'name': 'TextPagesComponent', 'selector': 'app-text-pages'},{'name': 'UiComponent', 'selector': 'app-ui'}];
+    var DIRECTIVES = [{'name': 'StateDirective', 'selector': '[appState]'}];
     var ACTUAL_COMPONENT = {'name': 'TableauLightComponent'};
 </script>
 <script src="../js/tree.js"></script>

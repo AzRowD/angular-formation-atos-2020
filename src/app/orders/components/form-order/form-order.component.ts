@@ -16,6 +16,8 @@ export class FormOrderComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    console.log(this.init);
+
     this.form = this.fb.group({
       tjmHt: [this.init.tjmHt],
       nbJours: [this.init.nbJours],

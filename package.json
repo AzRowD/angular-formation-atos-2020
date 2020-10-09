@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "doc": "compodoc -p tsconfig.json -o -s"
+    "doc": "compodoc -p tsconfig.json -o -s",
+    "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer dist/crm-atos-octobre/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +30,7 @@
     "bootstrap": "^4.5.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "webpack-bundle-analyzer": "^3.9.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

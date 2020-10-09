@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { StateOrder } from '../enums/state-order.enum';
 import { Order } from '../models/order';
@@ -12,14 +12,14 @@ import { tap } from 'rxjs/operators';
 export class OrdersService {
   private collection$: Observable<Order[]>;
   private urlApi = environment.urlApi;
-  public myItem: Order;
+  public myItem$ = new BehaviorSubject<Order>(null);
   constructor(private http: HttpClient) {
     // this.collection = this.http.get<Order[]>(this.urlApi + '/orders');
     this.collection = this.http.get<Order[]>(`${this.urlApi}/orders`).pipe(
       tap((data) => {
-        this.myItem = data[0];
+        this.myItem$.next(data[0]);
       })
-      );
+    );
 
   }
 
@@ -27,13 +27,13 @@ export class OrdersService {
     return this.collection$;
   }
 
-  set collection(col: Observable<Order[]>){
+  set collection(col: Observable<Order[]>) {
     this.collection$ = col;
   }
 
   public changeState(item: Order, state: StateOrder): Observable<Order> {
     // item.state = state;
-    const obj = {...item};
+    const obj = { ...item };
     obj.state = state;
     return this.update(obj);
   }
@@ -46,7 +46,9 @@ export class OrdersService {
     return this.http.post<Order>(`${this.urlApi}/orders`, item);
   }
 
-  // delete
+  public getItemById(id: string): Observable<Order> {
+    return this.http.get<Order>(`${this.urlApi}/orders/${id}`);
+  }
 
-  // get item by id
+  // delete
 }
